@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,intial-scale=1">
+  <title>Pizzara restaurant</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <header id ="top-nav-container">
+    <div class="navbar">
+      <div class="logo-container">
+        <a href="index.html"><img id = "pizzaralogo" src ="logo.png" alt = "pizzara logo" title = "pizzara logo"/></a>
+      </div>
+      <div id="top-nav">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MenuPage.html">Menu</a></li>
+            <li><a href="BookingPage.html">Booking</a></li>
+            <li><a href="OrderPage.html">Order</a></li>
+            <li><a href="AboutPage.html">About</a></li>
+            <li><a href="ContactUs.html">Contact</a></li>
+            <div class="button-container">
+              <button class = add-to-cart-button>
+                <img class="cart-icon" src = "cart.png" alt = "cart icon">
+                <span class="total-price">$120.00</span>
+                <div class=item-count-circle>
+                  <span class="item-count">3</span>
+                </div>
+              </button>
+            </div>
+          </ul>
+  
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+          <div class = "bar1"></div>
+          <div class = "bar2"></div>
+          <div class = "bar3"></div>
+          <ul class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MenuPage.html">Menu</a></li>
+            <li><a href="BookingPage.html">Booking</a></li>
+            <li><a href="OrderPage.html">Order</a></li>
+            <li><a href="AboutPage.html">About</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="script.js"></script>
+  <section>
+    <div id="home-banner">
+      <div id="title">
+        <h2>The BEST Pizza In Town</h2>
+        <h1>Welcome To Pizzara</h1>
+        <img class="header-image" src="">
+      </div> 
+      <button class="book-button" onclick="window.location.href='BookingPage.html'">
+        <a>Book Now</a>
+      </button>
+      <img class ="home-pizza" src="pizza-home.png" alt="homepage banner pizza image">
+    </div>
+  </section>
+  <section>
+    <div id="home-order-segment-container">
+      <div id="home-order-segment-text">
+        <h2>Welcome to</h2>
+        <h1>Papa's Pizza</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
+      </div>
+      <div id="open-hours">
+        <div class="open-hours-icon"></div>
+        <a>Open Hours</a>
+        <a>10am - 8pm</a>
+      </div>
+      <div id="contact">
+        <div class="contact-icon"></div>
+        <a>Contact Us</a>
+        <a>0800PIZZARA</a>
+      </div>
+      <button class="order-button" onclick="window.location.href='OrderPage.html'">
+        <a>Order Online</a>
+      </button>
+    </div>
+  </section>
+  <section>
+    <div id = "footer-container">
+      <div id="footer-details">
+        <h1>Details</h1>
+        <a><strong>Location: </strong>5 Otawa Road, tot exist, Auckland New Zealand</a>
+        <a><strong>Hotline: </strong>0800PIZZARA</a>
+        <a><strong>Email: </strong>PapasPizzara123456@gmail.com</a>
+      </div>
+      <div class="line-break"></div>
+      <div id="footer-hours">
+        <h1>Opening Hours</h1>
+        <a><strong>Mon - Tues: </strong>10.00 am - 8.00 pm</a>
+        <a><strong>Wed - Thur: </strong>10.00 am - 8.00 pm</a>
+        <a><strong>Fri - Sat: </strong>10.00 am - 8.00 pm</a>
+        <a><strong>Sun </strong>10.00 am - 8.00 pm</a>
+      </div>
+      <div class="line-break"></div>
+      <div id="footer-links">
+        <h1>Useful Links</h1>
+        <a><strong>Home</strong></a>
+        <a><strong>Menu</strong></a>
+        <a><strong>Booking</strong></a>
+        <a><strong>Order</strong></a>
+        <a><strong>About</strong></a>
+        <a><strong>Contact</strong></a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class = "Breadcrumb-container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="MenuPage.html">Menu</a></li>
+        <li><a href="BookingPage.html">Booking</a></li>
+        <li><a href="OrderPage.html">Order</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+        <li><a href="ContactUs.html">Contact</a></li>
+      </ul>
+      <button class="toggle-button" onclick="toggleBreadcrumb(this)">
+    </div>
+  </section>
+</body>
+</html>

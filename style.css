@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Londrina Solid&display=swap');
+html {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  background-image: url("image-removebg-preview\ \(5\)\ \(3\).png");
+  background-size: cover;
+  background-position: center;
+  
+}
+section{
+  animation: transitionIn 0.75s;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+}
+.navbar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-color: rgb(255,144,0);
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(70% - 20px));
+  transform: scaleX(-1);
+  
+}
+#top-nav{
+  margin-right: 1rem;
+  padding: 0;
+}
+#top-nav ul li a {
+  text-decoration: none;
+  font-family: 'open sans';
+  font-weight: bold;
+  font-size: 1.3em;
+  color: rgb(255, 255, 235);
+}
+#top-nav ul li a:hover {
+  color: black;
+}
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#top-nav ul li {
+  padding: 5px;
+  margin-left: 0.8em;
+}
+#top-nav ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  color: rgb(255,144,0);
+}
+#pizzaralogo {
+  width: 80px;
+  height: 100px;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+.logo-container{
+  width: 100px;
+  height: 120px;
+}
+.button-container {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  margin-left: 10px;
+}
+.add-to-cart-button {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 180);
+  padding: 10px 20px;
+  border: 4px, solid, rgb(255, 255, 180);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: width 0.3s ease;
+  width: 40px;
+  height: 40px;
+  
+}
+.add-to-cart-button:hover{
+  transition: 0.3s;
+  width: 150px;
+  height: 40px;
+}
+.cart-icon{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 15px;
+}
+.item-count-circle{
+  display: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  border-radius: 50%;
+  background-color: red;
+}
+.item-count{
+  display: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: 'open sans';
+  color: rgb(255, 255, 235)
+}
+.total-price{
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5em;
+  font-family: 'open sans';
+  font-weight: bold;
+  color: black;
+}
+.add-to-cart-button:hover .item-count-circle{
+  transition: 0.3s;
+  display: block;
+}
+.add-to-cart-button:hover .item-count{
+  transition: 0.3s;
+  display: block;
+}
+.add-to-cart-button:hover .total-price{
+  transition: 0.3s;
+  display: block;
+}
+#hamburger-icon {
+  margin-top: 1rem;
+  display: none;
+  cursor: pointer;
+  z-index: 11;
+  height: 100%;
+}
+#hamburger-icon div {
+  width: 40px;
+  height: 5px;
+  background-color: white;
+  margin-top: 5px;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.open .bar2 {
+  opacity: 0;
+}
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+.open .mobile-menu {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mobile-menu {
+  display: none;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  z-index: 10;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  transition: 0.8s;
+}
+.mobile-menu ul li a:hover{
+  color: rgb(255, 144, 0);
+}
+
+.stickNav {
+  position: fixed;
+  top: -50%;
+  width: 100%;
+  z-index: 10;
+  transition: top 0.5s;
+}
+.stickNav:hover {
+  top: 0;
+}
+#home-banner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+#title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#title h2 {
+  color: rgb(255,144,0);
+  font-family: 'pacifico';
+  font-size: max(2vw, 1.5em);
+  font-weight: normal;
+  margin-bottom: 0;
+}
+#title h1 {
+  color: white;
+  font-family: 'londrina solid';
+  font-size: max(8vw, 4em);
+  text-align: center;
+  letter-spacing: 4px;
+  font-weight: normal;
+  margin-top: 0;
+}
+.book-button{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255,144,0);
+  border: 6px solid rgb(255, 144, 0);
+  border-radius: 30px;
+  width: 250px;
+  height: 60px;
+  color: white;
+  font-family: 'open sans';
+  font-weight: bold;
+  font-size: 2.1em;
+  text-align: center;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.book-button:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+.home-pizza{
+  width: 100%;
+  max-width: 850px;
+  min-width: 250px;
+  animation: home-pizza-zoom 1.5s;
+}
+#home-order-segment-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: rgb(255,255,235);
+  margin: 0;
+  padding: 0;
+}
+#home-order-segment-text{
+  margin-top: 5rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#home-order-segment-text h2{
+  color: rgb(255,144,0);
+  font-family: 'pacifico';
+  font-weight: normal;
+  font-size: 2em;
+}
+#home-order-segment-text h1{
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: 'londrina solid';
+  font-size: 4.5em;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+#home-order-segment-text p{
+  color: black;
+  font-family: 'open sans';
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 25px;
+}
+#open-hours, #contact{
+  display: inline;
+  color: rgb(255,144,0);
+  font-family: 'open sans';
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#open-hours a, #contact a{
+  display: block;
+}
+#open-hours div, #contact div{
+  background-color: rgb(255,144,0);
+  width: 100px;
+}
+.order-button{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255,144,0);
+  border: 6px solid rgb(220,144,0);
+  border-radius: 30px;
+  width: 250px;
+  height: 60px;
+  font-family: 'open sans';
+  font-weight: bold;
+  font-size: 1.7em;
+  text-align: center;
+  cursor: pointer;
+}
+.order-button:hover{
+  transform: scale(1.1);
+  transition: 0.3s
+}
+#menu-banner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+#menu-title{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  text-align: left;
+}
+#menu-title h2 {
+  color: rgb(255,144,0);
+  font-family: 'pacifico';
+  font-size: max(3vw, 2em);
+  font-weight: normal;
+  margin-bottom: 0;
+}
+#menu-title h1 {
+  color: white;
+  font-family: 'londrina solid';
+  font-size: max(6vw, 6em);
+  letter-spacing: 4px;
+  font-weight: normal;
+  margin-top: 0;
+}
+.menu-pizza{
+  width: 100%;
+  max-width: 450px;
+  min-width: 250px;
+}
+#footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: 'open sans';
+  justify-content: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+#footer-container h1 {
+  font-size: 2em;
+}
+#footer-container a {
+  font-size: 1.3em;
+  margin: 0.5rem;
+}
+#footer-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.line-break{
+  width:100%;
+  height: 1px;
+  background-color: white;
+}
+#footer-hours {
+  display: flex;
+  flex-direction: column;
+}
+#footer-links {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+#footer-links a:hover{
+  color: rgb(255,144,0);
+  transform: scale(1.1);
+}
+.line-break-bottom{
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+.toggle .Breadcrumb-container{
+  display: none;
+}
+.Breadcrumb-container {
+  list-style: none;
+  background-color: rgb(255, 144, 0);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.Breadcrumb-container ul li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+.Breadcrumb-container ul li a {
+  color: rgb(255, 255, 230);
+  text-decoration: none;
+  font-family: 'open sans';
+  font-weight: bold;
+  font-size: max(1vw, 0.7em);
+}
+
+.Breadcrumb-container li a:hover {
+  color: black;
+}
+.toggle-button{
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+@keyframes home-pizza-zoom{
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+}
+@media only screen and (max-width: 750px) {
+  header nav {
+    display: none;
+  }
+  #hamburger-icon{
+    display: block;
+  }
+  #menu-banner{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #menu-title {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width:750px) {
+  #home-order-segment-container{
+    align-items: flex-start;
+    text-align: left;
+  }
+  #footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .line-break{
+    height: 300px;
+    width: 1px;
+  }
+  .Breadcrumb-container{
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+@media only screen and (min-width:1280px){
+  #footer{
+    font-size: 20px;
+  }
+  .menu-pizza{
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+
+
+

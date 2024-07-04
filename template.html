@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,intial-scale=1">
+  <title>Pizzara restaurant</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header id = "top-nav">
+    <img id = "pizzaralogo" src ="logo.png" alt = "pizzara logo" title = "pizzara logo"/>
+  
+    <div id="top-nav">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="MenuPage.html">Menu</a></li>
+          <li><a href="BookingPage.html">Booking</a></li>
+          <li><a href="OrderPage.html">Order</a></li>
+          <li><a href="AboutPage.html">About</a></li>
+          <li><a href="ContactUs.html">Contact</a></li>
+          <div class="button-container">
+            <button class = add-to-cart-button>
+              <img class="cart-icon" src = "cart.png" alt = "cart icon">
+              <span class="total-price">$120.00</span>
+              <div class=item-count-circle>
+                <span class="item-count">3</span>
+              </div>
+            </button>
+          </div>
+        </ul>
+        
+      </nav>
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <div class = "bar1"></div>
+        <div class = "bar2"></div>
+        <div class = "bar3"></div>
+        <ul class="mobile-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="MenuPage.html">Menu</a></li>
+          <li><a href="BookingPage.html">Booking</a></li>
+          <li><a href="OrderPage.html">Order</a></li>
+          <li><a href="AboutPage.html">About</a></li>
+          <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <script src="script.js"></script>
+  <div class="break"></div>
+  <section id = "footer">
+    <div id = "footer-top">
+      <div id = footer-logo>
+        <img id = "pizzaralogo2" src = "logo.png" alt = "pizza logo">
+        <div id = "footer-details">
+          <a><strong>Location: </strong>5 Otawa Road, <br> tot exist, Auckland New Zealand</a></li>
+          <a><strong>Hotline: </strong>0800PIZZARA</a></li>
+          <a><strong>Email: </strong>PapasPizzara123456@gmail.com</a></li>
+        </div>
+      </div>
+      <div class = "line-break"></div>
+      <div id = "footer-hours">
+        <h1>Opening hours</h1>
+        <a><strong>Mon - Tues: </strong>6.00 am - 10.00 pm</a>
+        <a><strong>Wed - Fri: </strong>6.00 am - 10.00 pm</a>
+        <a><strong>Sat: </strong>6.00 am - 10.00 pm</a>
+        <div class = sunday-hours>
+          <a><strong>Sun: </strong></a>
+          <div class = "sunday">
+            <a>Closed</a>
+          </div>
+        </div>
+      </div>
+      <div class = "line-break"></div>
+      <div id="footer-links">
+        <h1>Useful links</h1>
+        <a href="index.html">Home</a>
+        <a href="MenuPage.html"">Menu</a>
+        <a href="AboutPage.html"">About us</a>
+        <a href="OrderPage.html">Order Online</a>
+        <a href="BookingPage.html">Reservations</a>
+        <a href="ContactUs.html">Contact Us</a>
+      </div>
+      <div class = "line-break"></div>
+      <div id="footer-attrubution">
+        <h1>Credits</h1>
+        <a>Travis</a>
+        <a>Michale</a>
+        <a>Freepik</a>
+        <a>Pickfree</a>
+        <a>J.Jona.Jameson</a>
+        <a>Short king</a>
+      </div>
+    </div>
+    <div class = "line-break-bottom"></div>
+    <div id="footer-credit">
+      <a>© Pizzara all Rights Reserved. Designed by Ash Setford</a>
+    </div>
+  </section>
+</body>
+</html>

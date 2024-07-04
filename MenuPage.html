@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,intial-scale=1">
+  <title>Pizzara restaurant</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <header id ="top-nav-container">
+    <div class="navbar">
+      <a href="index.html"><img id = "pizzaralogo" src ="logo.png" alt = "pizzara logo" title = "pizzara logo"/></a>
+      <div id="top-nav">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MenuPage.html">Menu</a></li>
+            <li><a href="BookingPage.html">Booking</a></li>
+            <li><a href="OrderPage.html">Order</a></li>
+            <li><a href="AboutPage.html">About</a></li>
+            <li><a href="ContactUs.html">Contact</a></li>
+            <div class="button-container">
+              <button class = add-to-cart-button>
+                <img class="cart-icon" src = "cart.png" alt = "cart icon">
+                <span class="total-price">$120.00</span>
+                <div class=item-count-circle>
+                  <span class="item-count">3</span>
+                </div>
+              </button>
+            </div>
+          </ul>
+  
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+          <div class = "bar1"></div>
+          <div class = "bar2"></div>
+          <div class = "bar3"></div>
+          <ul class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MenuPage.html">Menu</a></li>
+            <li><a href="BookingPage.html">Booking</a></li>
+            <li><a href="OrderPage.html">Order</a></li>
+            <li><a href="AboutPage.html">About</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="script.js"></script>
+  <section>
+    <div id="menu-banner">
+      <div id="menu-title">
+        <h2>Random Slogan</h2>
+        <h1>OUR GREAT MENU</h1>
+      </div> 
+      <img class ="menu-pizza" src="image-removebg-preview (6).png" alt="homepage banner pizza image">
+    </div>
+  </section>
+</body>
+</html>
