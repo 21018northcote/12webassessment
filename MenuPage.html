@@ -12,31 +12,47 @@
   <header id ="top-nav-container">
     <div class="navbar">
       <a href="index.html"><img id = "pizzaralogo" src ="logo.png" alt = "pizzara logo" title = "pizzara logo"/></a>
-      <div id="top-nav">
-        <nav>
+    <div id="top-nav">
+        <nav id ="desktop-nav">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="MenuPage.html">Menu</a></li>
+            <li>
+              <div class="menu-dropdown">
+                <a href="MenuPage.html" class="dropbtn">Menu</a>
+                <div class="dropdown-content">
+                  <a href="#pizza-section">Pizzas</a>
+                  <a href="MenuPage.html">Sides</a>
+                  <a href="MenuPage.html">Drinks</a>
+                </div>
+              </div>
+            </li>
             <li><a href="BookingPage.html">Booking</a></li>
             <li><a href="OrderPage.html">Order</a></li>
-            <li><a href="AboutPage.html">About</a></li>
-            <li><a href="ContactUs.html">Contact</a></li>
-            <div class="button-container">
-              <button class = add-to-cart-button>
-                <img class="cart-icon" src = "cart.png" alt = "cart icon">
-                <span class="total-price">$120.00</span>
-                <div class=item-count-circle>
-                  <span class="item-count">3</span>
+            <li>
+              <div class="menu-dropdown">
+                <a href="AboutPage.html" class="dropbtn">About</a>
+                <div class="dropdown-content">
+                  <a href="AboutPage.html">lnfo</a>
+                  <a href="AboutPage.html">Location</a>
+                  <a href="AboutPage.html">Contact</a>
                 </div>
-              </button>
+              </div>
+            </li>
+            <li><a href="ContactUs.html">Contact</a></li>
+            <div class="add-to-cart-button-container">
+              <div class="add-to-cart-button">
+                <svg class="cart-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+                <span class="item-count">0</span>
+              </div>
             </div>
           </ul>
-  
         </nav>
         <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-          <div class = "bar1"></div>
-          <div class = "bar2"></div>
-          <div class = "bar3"></div>
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
           <ul class="mobile-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="MenuPage.html">Menu</a></li>
@@ -49,7 +65,20 @@
       </div>
     </div>
   </header>
-  <script src="script.js"></script>
+  <section class="">
+    <div id="cart">
+      <div id="cart-header">
+        <h1>Your Cart</h1>
+      </div>
+      <div class="cart-items">
+        
+      </div>
+      <div id="cart-buttons">
+        <button class="close-button">Close</button>
+        <button class="checkout-button">Check Out</button> 
+      </div>
+    </div>
+  </section>
   <section>
     <div id="menu-banner">
       <div id="menu-title">
@@ -59,5 +88,185 @@
       <img class ="menu-pizza" src="image-removebg-preview (6).png" alt="homepage banner pizza image">
     </div>
   </section>
+
+  <section id ="pizza-section">
+    <div id="pizza-menu-container">
+      <h2>More slogan stuff</h2>
+      <h1>Our Pizzas</h1>
+      <div class="pizza-carousel">
+        <div class="slideshow-container">
+          <div class="slides-container">
+            <div class="mySlides fade">
+              <img class="pizza-img" src="pizza1.png" style="width:100%">
+              <div class="info">
+                <div class="text">Name 1</div>
+                <button class="add-cart-button" data-title="1" data-price="25.00">
+                  Add To Cart
+                </button>
+              </div>
+              <div class="hover-info">
+                <button id ="1" class="viewbutton" href="#overlay">View More</button>
+              </div>
+            </div>
+            <div class="mySlides fade">
+              <img class="pizza-img" src="pizza2.png" style="width:100%">
+              <div class="info">
+                <div class="text">Name 2</div>
+                <button class="add-cart-button" data-title="2" data-price="25.00">
+                  Add To Cart
+                </button>
+              </div>
+              <div class="hover-info">
+                <button id ="2" class="viewbutton" href="#overlay">View More</button>
+              </div>
+            </div>
+            <div class="mySlides fade">
+              <img class="pizza-img" src="pizza3.png" style="width:100%">
+              <div class="info">
+                <div class="text">Name 3</div>
+                <button class="add-cart-button" data-title="3" data-price="25.00">
+                  Add To Cart
+                </button>
+              </div>
+              <div class="hover-info">
+                <button id ="3" class="viewbutton" href="#overlay">View More</button>
+              </div>
+            </div>
+            <div class="mySlides fade">
+              <img class="pizza-img" src="pizza4.png" style="width:100%">
+              <div class="info">
+                <div class="text">Name 4</div>
+                <button class="add-cart-button" data-title="4" data-price="25.00">
+                  Add To Cart
+                </button>
+              </div>
+              <div class="hover-info">
+                <button id ="4" class="viewbutton" href="#overlay">View More</button>
+              </div>
+            </div>
+            <div class="mySlides fade">
+              <img class="pizza-img" src="pizza5.png" style="width:100%">
+              <div class="info">
+                <div class="text">Name 5</div>
+                <button class="add-cart-button" data-title="5" data-price="25.00">
+                  Add To Cart
+                </button>
+              </div>
+              <div class="hover-info">
+                <button id ="5" class="viewbutton" href="#overlay">View More</button>
+              </div>
+            </div>
+            <div class="mySlides fade">
+              <img class="pizza-img" src="pizza6.png" style="width:100%">
+              <div class="info">
+                <div class="text">Name 6</div>
+                <button class="add-cart-button" data-title="pizza 6" data-price="25.00">
+                  Add To Cart
+                </button>
+              </div>
+              <div class="hover-info">
+                <button id ="6" class="viewbutton" href="#overlay">View More</button>
+              </div>
+            </div>
+            <div id="overlay">
+              <div id="overlay-inner">
+                <button Id="close">Close X</button>
+                <div id ="overlay-content-1">
+                  <h1>Item Name 1</h1>
+                  <a class="ingrediants">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</a>
+                  <div class="prices">
+                    <a>Reg: $25.00</a>
+                    <a>Lg: $30.00</a>
+                  </div>
+                </div>
+                <div id="overlay-content-2">
+                  <h1>Item Name 2</h1>
+                  <a class="ingrediants">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</a>
+                  <div class="prices">
+                    <a>Reg: $25.00</a>
+                    <a>Lg: $30.00</a>
+                  </div>
+                </div>
+                <div id="overlay-content-3">
+                  <h1>Item Name 3</h1>
+                  <a class="ingrediants">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</a>
+                  <div class="prices">
+                    <a>Reg: $25.00</a>
+                    <a>Lg: $30.00</a>
+                  </div>
+                </div>
+                <div id="overlay-content-4">
+                  <h1>Item Name 4</h1>
+                  <a class="ingrediants">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</a>
+                  <div class="prices">
+                    <a>Reg: $25.00</a>
+                    <a>Lg: $30.00</a>
+                  </div>
+                </div>
+                <div id="overlay-content-5">
+                  <h1>Item Name 5</h1>
+                  <a class="ingrediants">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</a>
+                  <div class="prices">
+                    <a>Reg: $25.00</a>
+                    <a>Lg: $30.00</a>
+                  </div>
+                </div>
+                <div id="overlay-content-6">
+                  <h1>Item Name 6</h1>
+                  <a class="ingrediants">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</a>
+                  <div class="prices">
+                    <a>Reg: $25.00</a>
+                    <a>Lg: $30.00</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+          <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+      </div>
+  </section>
+  <section>
+    <div id="sides-container">
+      <div id="sides-inner">
+        <h2>Slogans n stuff</h2>
+        <h1>Our Sides</h1>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div id="add-to-cart-mobile">
+      <button class="add-to-cart-button-mobile">
+        <img class="cart-icon-mobile" src="cart.png" alt="cart icon">
+        <span class="total-price-mobile">$120.00</span>
+        <div class=item-count-circle-mobile>
+          <span class="item-count-mobile">3</span>
+        </div>
+      </button>
+    </div>
+  </section>
+  <div class="white-space"></div>
+  <section>
+    <div id = "footer-container">
+      <a>© Pizzara all Rights Reserved. Designed by
+      Ash Setford</a>
+      <ul>
+        <li><img class ="footer-icons" src ="faceboo.png" width = "40" alt="facebook icon"></li>
+        <li><img class ="footer-icons" src ="twtter.png" width = "40" alt="twitter icon"></li>
+        <li><img class ="footer-icons" src ="nstagram.png" width = "40" alt="instagram logo icon"></li>
+        <li><img class ="footer-icons" src ="youtube.png" width = "40" alt="youtube icon"></li>
+      </ul>
+  </section>
+  <script src="script.js"></script>
 </body>
 </html>

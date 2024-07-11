@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Londrina Solid&display=swap');
+
 html {
   height: 100%;
   width: 100%;
@@ -15,9 +16,13 @@ body {
   background-image: url("image-removebg-preview\ \(5\)\ \(3\).png");
   background-size: cover;
   background-position: center;
-  
 }
-section{
+
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+section {
   animation: transitionIn 0.75s;
 }
 
@@ -27,7 +32,9 @@ section{
   justify-content: space-between;
   color: white;
   width: 100%;
+  
 }
+
 .navbar:before {
   content: "";
   position: absolute;
@@ -35,16 +42,20 @@ section{
   left: 0;
   width: 100%;
   height: 110%;
-  background-color: rgb(255,144,0);
+  background-color: rgb(255, 144, 0);
   z-index: -1;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(70% - 20px));
   transform: scaleX(-1);
-  
 }
-#top-nav{
+
+#top-nav {
   margin-right: 1rem;
   padding: 0;
 }
+#top-nav ul, #pizzaralogo, .bar1, .bar2, .bar3 {
+  filter: drop-shadow(0px 1px 2px rgba(65, 65, 65, 0.9));
+}
+
 #top-nav ul li a {
   text-decoration: none;
   font-family: 'open sans';
@@ -52,9 +63,11 @@ section{
   font-size: 1.3em;
   color: rgb(255, 255, 235);
 }
-#top-nav ul li a:hover {
+
+#desktop-nav ul li a:hover{
   color: black;
 }
+
 ul {
   list-style: none;
   height: 100%;
@@ -62,26 +75,31 @@ ul {
   align-items: center;
   justify-content: space-around;
 }
+
 #top-nav ul li {
   padding: 5px;
   margin-left: 0.8em;
 }
+
 #top-nav ul li:hover {
   transform: scale(1.1);
   transition: 0.3s;
-  color: rgb(255,144,0);
+  color: rgb(255, 144, 0);
 }
+
 #pizzaralogo {
   width: 80px;
   height: 100px;
   margin-left: 1rem;
   margin-top: 0.5rem;
 }
-.logo-container{
+
+.logo-container {
   width: 100px;
   height: 120px;
 }
-.button-container {
+
+.add-to-cart-button-container {
   position: relative;
   width: 150px;
   height: 40px;
@@ -90,72 +108,84 @@ ul {
 .add-to-cart-button {
   display: flex;
   align-items: center;
-  background-color: rgb(255, 255, 180);
-  padding: 10px 20px;
-  border: 4px, solid, rgb(255, 255, 180);
+  width: 60px;
+  height: 40px;
+  background-color: rgb(255, 255, 200);
+  border: 4px solid rgb(255, 255, 200);
   border-radius: 50px;
+  top: 50%;
+  bottom: 50%;
   cursor: pointer;
   transition: width 0.3s ease;
-  width: 40px;
-  height: 40px;
-  
+  font-family: 'open sans';
 }
-.add-to-cart-button:hover{
-  transition: 0.3s;
+
+.add-to-cart-button:hover {
   width: 150px;
-  height: 40px;
+  transition: 0.3s;
 }
-.cart-icon{
+
+svg{
+  width: 40px;
+  height: 30px;  color: black;
+}
+.add-to-cart-button span{
+  display: flex;
   width: 20px;
   height: 20px;
-  position: absolute;
-  left: 15px;
-}
-.item-count-circle{
-  display: none;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 4px;
-  right: 6px;
-  border-radius: 50%;
   background-color: red;
-}
-.item-count{
-  display: none;
+  border-radius: 50%;
   font-weight: bold;
-  font-size: 1.2em;
-  font-family: 'open sans';
-  color: rgb(255, 255, 235)
+  justify-content: center;
+  align-items: center;
 }
-.total-price{
+.menu-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
   display: none;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.5em;
-  font-family: 'open sans';
-  font-weight: bold;
+  position: absolute;
+  background-color: rgba(0,0,0,0.95);
+  width: auto;
+  z-index: 1;
+  border: 5px rgba(0,0,0,0.95);
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+
+.dropdown-content a {
   color: black;
+  transition: scroll-behavior 0.5s ease-in-out;
 }
-.add-to-cart-button:hover .item-count-circle{
-  transition: 0.3s;
-  display: block;
+
+.dropdown-content a:hover {
+  background-color: rgb(255, 144, 0);
 }
-.add-to-cart-button:hover .item-count{
-  transition: 0.3s;
-  display: block;
+.menu-dropdown:hover{
+  animation: dropdown-slide 0.5s;
+  filter: drop-shadow(0px 0px 0px rgba(65, 65, 65, 0.9));
 }
-.add-to-cart-button:hover .total-price{
-  transition: 0.3s;
-  display: block;
+
+.menu-dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
 }
+
+.menu-dropdown:hover .dropbtn {
+  background-color: rgb(255, 144, 0);
+}
+
 #hamburger-icon {
   margin-top: 1rem;
   display: none;
   cursor: pointer;
-  z-index: 11;
   height: 100%;
 }
+
 #hamburger-icon div {
   width: 40px;
   height: 5px;
@@ -164,40 +194,57 @@ ul {
   transition: 0.4s;
   border-radius: 10px;
 }
+
 .open .bar1 {
   -webkit-transform: rotate(-45deg) translate(-6px, 6px);
   transform: rotate(-45deg) translate(-6px, 6px);
+  z-index: 20;
 }
+
 .open .bar2 {
   opacity: 0;
+  z-index: 20;
 }
+
 .open .bar3 {
   -webkit-transform: rotate(45deg) translate(-6px, -8px);
   transform: rotate(45deg) translate(-6px, -8px);
+  z-index: 20;
 }
+
 .open .mobile-menu {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .mobile-menu {
   display: none;
-  background-color: black;
+  background-color: rgba(0,0,0, 0.9);
   position: fixed;
   top: 0;
   left: 0;
-  width: 70%;
+  margin: 0;
+  padding: 0;
+  width: 9rem;
   height: 100%;
+  box-shadow: 3px 0px 2px rgba(0,0,0,0.9);
   z-index: 10;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  transition: 0.8s;
+  animation: mobile-slide-in 0.3s ease-in-out;
 }
-.mobile-menu ul li a:hover{
+
+.mobile-menu ul li a:hover {
   color: rgb(255, 144, 0);
+}
+
+@keyframes mobile-slide-in{
+  from{
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(0);
+  }
 }
 
 .stickNav {
@@ -207,29 +254,151 @@ ul {
   z-index: 10;
   transition: top 0.5s;
 }
+
 .stickNav:hover {
   top: 0;
 }
-#home-banner{
+#cart{
+  position: fixed;
+  background-color: black;
+  width: 425px;
+  top: 0;
+  right: -425px;
+  height: 100%;
+  z-index: 10;
+  transition: 0.5s;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  overflow: auto;
+}
+#cart::-webkit-scrollbar {
+  display: none;
+}
+section.showCart #cart{
+  right: 0;
+}
+#cart-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+#cart-header h1{
+  font-family: 'londrina solid';
+  font-size: 4em;
+  color: rgb(255,255,235);
+  font-weight: none;
+  letter-spacing: 2px;
+  margin-left: 1.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+}
+.line-break-2{
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin: 0.75rem;
+}
+.item img{
+  width: 100%;
+}
+.item{
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  font-family: 'open sans';
+  font-size: 1.2em;
+  font-weight: bold;
+  color: rgb(255,255,235);
+  align-items: center;
+}
+.Quantity span{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.Quantity span:nth-child(2){
+  background-color: transparent;
+  color: rgb(255,255,235);
+}
+.item:nth-child(even){
+  background-color: #1f1e1e;
+}
+#cart-buttons{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#cart-buttons button{
+  border: none;
+  cursor: pointer;
+  font-family: 'open sans';
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.close-button{
+  background-color: rgb(255,255,235);
+  color: black
+}
+.checkout-button{
+  background-color: rgb(255, 144, 0);
+  color: black;
+}
+#cart-subtotal{
+  display: flex;
+  justify-content: space-between;
+  font-family: 'open sans';
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+#cart-total{
+  display: flex;
+  justify-content: space-between;
+  font-family: 'open sans';
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+@keyframes cart-slide{
+  from{
+    transform: translateX(100%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+#home-banner {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0;
   margin: 0;
 }
-#title{
+
+#title {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 #title h2 {
-  color: rgb(255,144,0);
+  color: rgb(255, 144, 0);
   font-family: 'pacifico';
   font-size: max(2vw, 1.5em);
   font-weight: normal;
   margin-bottom: 0;
 }
+
 #title h1 {
   color: white;
   font-family: 'londrina solid';
@@ -239,11 +408,12 @@ ul {
   font-weight: normal;
   margin-top: 0;
 }
-.book-button{
-  display:flex;
+
+.book-button {
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255,144,0);
+  background-color: rgb(255, 144, 0);
   border: 6px solid rgb(255, 144, 0);
   border-radius: 30px;
   width: 250px;
@@ -256,38 +426,44 @@ ul {
   letter-spacing: 2px;
   cursor: pointer;
 }
-.book-button:hover{
+
+.book-button:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
-.home-pizza{
+
+.home-pizza {
   width: 100%;
   max-width: 850px;
   min-width: 250px;
   animation: home-pizza-zoom 1.5s;
 }
-#home-order-segment-container{
+
+#home-order-segment-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
-  background-color: rgb(255,255,235);
+  background-color: rgb(255, 255, 235);
   margin: 0;
   padding: 0;
 }
-#home-order-segment-text{
+
+#home-order-segment-text {
   margin-top: 5rem;
   margin-left: 10%;
   margin-right: 10%;
 }
-#home-order-segment-text h2{
-  color: rgb(255,144,0);
+
+#home-order-segment-text h2 {
+  color: rgb(255, 144, 0);
   font-family: 'pacifico';
   font-weight: normal;
   font-size: 2em;
 }
-#home-order-segment-text h1{
+
+#home-order-segment-text h1 {
   margin: 0;
   padding: 0;
   color: black;
@@ -296,33 +472,41 @@ ul {
   font-weight: normal;
   letter-spacing: 2px;
 }
-#home-order-segment-text p{
+
+#home-order-segment-text p {
   color: black;
   font-family: 'open sans';
   font-weight: bold;
   font-size: 1em;
   line-height: 25px;
 }
-#open-hours, #contact{
+
+#open-hours,
+#contact {
   display: inline;
-  color: rgb(255,144,0);
+  color: rgb(255, 144, 0);
   font-family: 'open sans';
   font-weight: bold;
   font-size: 1.2em;
 }
-#open-hours a, #contact a{
+
+#open-hours a,
+#contact a {
   display: block;
 }
-#open-hours div, #contact div{
-  background-color: rgb(255,144,0);
+
+#open-hours div,
+#contact div {
+  background-color: rgb(255, 144, 0);
   width: 100px;
 }
-.order-button{
-  display:flex;
+
+.order-button {
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255,144,0);
-  border: 6px solid rgb(220,144,0);
+  background-color: rgb(255, 144, 0);
+  border: 6px solid rgb(220, 144, 0);
   border-radius: 30px;
   width: 250px;
   height: 60px;
@@ -332,164 +516,494 @@ ul {
   text-align: center;
   cursor: pointer;
 }
-.order-button:hover{
+
+.order-button:hover {
   transform: scale(1.1);
   transition: 0.3s
 }
-#menu-banner{
+
+#menu-banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-top: 0;
+  padding-top: 0;
 }
-#menu-title{
+
+#menu-title {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: left;
   text-align: left;
 }
+
 #menu-title h2 {
-  color: rgb(255,144,0);
+  color: rgb(255, 144, 0);
   font-family: 'pacifico';
   font-size: max(3vw, 2em);
   font-weight: normal;
   margin-bottom: 0;
 }
+
 #menu-title h1 {
   color: white;
   font-family: 'londrina solid';
-  font-size: max(6vw, 6em);
+  font-size: max(8vw, 4em);
   letter-spacing: 4px;
   font-weight: normal;
   margin-top: 0;
 }
-.menu-pizza{
+
+.menu-pizza {
   width: 100%;
   max-width: 450px;
   min-width: 250px;
+  animation: home-pizza-zoom 0.75s;
+}
+
+#pizza-menu-container {
+  background-color: rgb(255, 255, 235);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#pizza-menu-container h2 {
+  color: rgb(255, 144, 0);
+  font-family: 'pacifico';
+  font-size: max(3vw, 2em);
+  font-weight: normal;
+
+}
+
+#pizza-menu-container h1 {
+  color: black;
+  font-family: 'londrina solid';
+  font-size: max(8vw, 4em);
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+.slides-container{
+  display: flex;
+  flex-direction: row;
+}
+.mySlides {
+  display: none;
+  transition: transform 0.5s ease;
+}
+.mySlides img{
+  max-width: 350px;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  max-width: 45px;
+  height: 100%;
+  max-height: 45px;
+  margin-top: -60px;
+  background-color: rgb(255, 144, 0);
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  transition: 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+}
+.prev{
+  left: -5%;
+}
+.next {
+  right: -5%;
+  border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+  transform: scale(1.1);
+  background-color: rgba(0,0,0,0.8);
+  transition: 0.3s;
+  
+}
+.text {
+  color: rgb(0,0,0);
+  font-size: 30px;
+  font-family: 'open sans';
+  font-weight: bold;
+  padding: 8px 12px;
+  text-align: center;
+  width: 100%;
+}
+.add-cart-button{
+  background-color: rgb(255, 144, 0);
+  border: none;
+  width: 50%;
+  height: 30px;
+  border-radius: 40px;
+  font-family: 'open sans';
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.add-cart-button:hover{
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+.slider-cart{
+  background-color: rgb(255, 144, 0);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  right: 15%;
+  bottom: -10px;
+}
+.slider-cart:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+.slider-cart img{
+  margin-top: 20%;
+}
+.viewbutton{
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-family: 'open sans';
+  font-weight: bold;
+  font-size: 14px;
+  color: rgb(255,255,235);
+  border: 2px solid rgb(255,255,235);
+  background: none;
+  outline: none;
+  text-transform: uppercase;
+}
+.viewbutton:hover{
+  transition: all 0.3s ease-in-out;
+  background-color: rgb(255, 144, 0);
+  color: black;
+  transform: scale(1.1);
+  border-color: rgb(255, 144, 0);
+}
+.mySlides:hover .hover-info{
+  opacity: 1;
+}
+.hover-info{
+  background: rgba(37,37,38, 0.91);
+  height: 73%;
+  position: relative;
+  top: -93.5%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 2;
+}
+
+
+#overlay{
+  position: fixed;
+  background-color: rgba(71, 69, 69, 0.7);
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 10;
+  
+}
+#overlay-inner{
+  background: url('dark-wood-scalable-vector-757505.jpg');
+  background-position: center;
+  width: 300px;
+  height: 500px;
+  position: relative;
+  opacity: 1;
+  margin: auto;
+  display: flex;
+  animation: menu-slide 0.3s ease-in-out;
+}
+#overlay-inner h1{
+  font-family: 'londrina solid';
+  font-size: 2.3em;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#overlay-inner a{
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: 'open sans';
+  text-align: center;
+}
+.ingrediants{
+  font-size: 1em;
+  color: white;
+}
+.prices{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.prices a{
+  font-size: 1.2em;
+  color: rgb(255, 144, 0);
+  font-weight: bold;
+}
+#overlay-content-1, #overlay-content-2, 
+#overlay-content-3, #overlay-content-4, 
+#overlay-content-5, #overlay-content-6{
+  display: none;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#close{
+  position: absolute;
+  font-family: 'open sans';
+  font-weight: bold;
+  top: 3px;
+  right: 10px;
+  background: none;
+  outline: 0;
+  color: white;
+  border:0;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#close:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+@keyframes menu-slide{
+  from{
+    transform: translateY(-100%);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 15px 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: rgb(255, 144, 0);
+}
+
+  
+#pizza-info h2 {
+  color: black;
+  font-family: 'open sans';
+  font-weight: bold;
+}
+
+#pizza-info a {
+  color: black;
+  font-family: 'open sans';
+  font-weight: bold;
+}
+.pizza-name-icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu-cart-icon {
+  background-color: rgb(255, 144, 0);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#price {
+  font-size: 1.4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgb(255, 144, 0);
+}
+#sides-container{
+  width: 100%;
+  background-color: rgb(255,255,235);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#sides-inner{
+  width: 100%;
+  height: 500px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-image: url('dark-wood-scalable-vector-757505.jpg');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#sides-inner h2{
+  color: rgb(255, 144, 0);
+  font-family: 'pacifico';
+  font-size: max(3vw, 2em);
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+#sides-inner h1{
+  color: white;
+  font-family: 'londrina solid';
+  font-size: max(8vw, 4em);
+  font-weight: normal;
+}
+#add-to-cart-mobile{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(255, 144, 0);
+  position: fixed;
+  bottom: 0;
+  height: 35px;
+  z-index: 4;
+}
+
+.add-to-cart-button-mobile{
+  border: none;
+  background: none;
+  width: 100%;
+  height: 35px;
+}
+.cart-icon-mobile{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: auto;
+  bottom: auto;
+}
+.total-price-mobile{
+  font-family: 'open sans';
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-size: 1.3em;
+}
+.item-count-circle-mobile{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 23%;
+  right: 10px;
+}
+.item-count-mobile{
+  font-family: 'open sans';
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: 13%;
+}
+.white-space{
+  height: 50px;
+  background-color: rgb(255, 255, 235);
 }
 #footer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: white;
+  color: black;
+  font-weight: bold;
   font-family: 'open sans';
   justify-content: center;
-  margin-left: 3rem;
-  margin-right: 3rem;
-}
-#footer-container h1 {
-  font-size: 2em;
-}
-#footer-container a {
-  font-size: 1.3em;
-  margin: 0.5rem;
-}
-#footer-details {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-}
-.line-break{
-  width:100%;
-  height: 1px;
-  background-color: white;
-}
-#footer-hours {
-  display: flex;
-  flex-direction: column;
-}
-#footer-links {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-}
-#footer-links a:hover{
-  color: rgb(255,144,0);
-  transform: scale(1.1);
-}
-.line-break-bottom{
-  width: 100%;
-  height: 1px;
-  background-color: white;
-}
-.toggle .Breadcrumb-container{
-  display: none;
-}
-.Breadcrumb-container {
+  margin: 0;
+  padding: 0;
   list-style: none;
   background-color: rgb(255, 144, 0);
-  position: fixed;
-  bottom: 0;
+  box-shadow: 0px -1.5px 2px rgb(65,65,65,0.9);
   width: 100%;
   z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
-
-
-.Breadcrumb-container ul li+li:before {
-  padding: 8px;
-  color: black;
-  content: "/\00a0";
+#footer-container a {
+  font-size: 1.3em;
+  margin-left: 1em;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-.Breadcrumb-container ul li a {
-  color: rgb(255, 255, 230);
-  text-decoration: none;
-  font-family: 'open sans';
-  font-weight: bold;
-  font-size: max(1vw, 0.7em);
-}
-
-.Breadcrumb-container li a:hover {
-  color: black;
-}
-.toggle-button{
-  display: flex;
-  align-items: flex-end;
-  justify-content: right;
-  position: absolute;
-  top: 50%;
-  right: 0;
-}
 @keyframes transitionIn {
   from {
     opacity: 0;
     transform: rotateX(-10deg);
   }
-  
+
   to {
     opacity: 1;
     transform: rotateX(0);
   }
 }
-@keyframes home-pizza-zoom{
+
+@keyframes home-pizza-zoom {
   from {
     transform: scale(0);
   }
+
   to {
     transform: scale(1);
+  }
+}
+@keyframes dropdown-slide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
 @media only screen and (max-width: 600px) {
   
 }
+
 @media only screen and (max-width: 750px) {
   header nav {
     display: none;
   }
-  #hamburger-icon{
+
+  #hamburger-icon {
     display: block;
   }
-  #menu-banner{
+
+  #menu-banner {
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -499,39 +1013,44 @@ ul {
     align-items: center;
     justify-content: center;
   }
+  #footer-container a{
+    margin-top: 1rem;
+  }
 }
 @media only screen and (min-width:750px) {
-  #home-order-segment-container{
+  #home-order-segment-container {
     align-items: flex-start;
     text-align: left;
   }
-  #footer-container{
+  #add-to-cart-mobile{
+    display: none;
+  }
+  #footer-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
     align-items: flex-start;
   }
-  .line-break{
+
+  .line-break {
     height: 300px;
     width: 1px;
   }
-  .Breadcrumb-container{
+
+  #footer-container {
     align-items: flex-start;
     justify-content: space-between;
     text-align: left;
   }
 }
-@media only screen and (min-width:1280px){
-  #footer{
+
+@media only screen and (min-width:1280px) {
+  #footer {
     font-size: 20px;
   }
-  .menu-pizza{
+  .menu-pizza {
     width: 100%;
     max-width: 600px;
   }
 }
-
-
-
-
