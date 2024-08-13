@@ -10,15 +10,15 @@
 
 <body>
   <header id ="top-nav-container">
-    <div class="navbar">
-      <a href="index.html"><img id = "pizzaralogo" src ="logo.png" alt = "pizzara logo" title = "pizzara logo"/></a>
+    <div class="navbar-mine">
+      <a href="index.html"><img id = "pizzaralogo" src ="logo.png" alt = "pizzara logo" title = "pizzara logo" loading="lazy"></a>
     <div id="top-nav">
         <nav id ="desktop-nav">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li>
               <div class="menu-dropdown">
-                <a href="MenuPage.html" class="dropbtn">Menu</a>
+                <a href="MenuPage.html" class="dropbtn" id="menu">Menu</a>
                 <div class="dropdown-content">
                   <a href="#pizza-section">Pizzas</a>
                   <a href="MenuPage.html">Sides</a>
@@ -27,7 +27,7 @@
               </div>
             </li>
             <li><a href="BookingPage.html">Booking</a></li>
-            <li><a href="OrderPage.html">Order</a></li>
+            <li><a href="order.html">Order</a></li>
             <li>
               <div class="menu-dropdown">
                 <a href="AboutPage.html" class="dropbtn">About</a>
@@ -44,6 +44,7 @@
                 <svg class="cart-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
                 </svg>
+                <span class="total-price">$000.00</span>
                 <span class="item-count">0</span>
               </div>
             </div>
@@ -57,7 +58,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="MenuPage.html">Menu</a></li>
             <li><a href="BookingPage.html">Booking</a></li>
-            <li><a href="OrderPage.html">Order</a></li>
+            <li><a href="order.html">Order</a></li>
             <li><a href="AboutPage.html">About</a></li>
             <li><a href="ContactUs.html">Contact Us</a></li>
           </ul>
@@ -69,13 +70,26 @@
     <div id="cart">
       <div id="cart-header">
         <h1>Your Cart</h1>
+        
       </div>
+      <div class="line-break"></div>
       <div class="cart-items">
         
       </div>
+      <div class="line-break"></div>
+      <div class="cart-prices">
+        <div class="cart-price-subtotal">
+          <a>Subtotal: </a>
+          <a class="cart-price-subtotal-value"></a>
+        </div>
+        <div class="cart-price-total">
+          <a>Total: </a>
+          <a class="cart-price-total-value"></a>
+        </div>
+      </div>
       <div id="cart-buttons">
         <button class="close-button">Close</button>
-        <button class="checkout-button">Check Out</button> 
+        <button class="checkout-button"><a href="order.html" id="Check-out-link">Check Out</a></button> 
       </div>
     </div>
   </section>
@@ -97,10 +111,10 @@
         <div class="slideshow-container">
           <div class="slides-container">
             <div class="mySlides fade">
-              <img class="pizza-img" src="pizza1.png" style="width:100%">
+              <img class="pizza-img" src="pizza1.png" style="width:100%" loading="lazy">
               <div class="info">
                 <div class="text">Name 1</div>
-                <button class="add-cart-button" data-title="1" data-price="25.00">
+                <button class="add-cart-button" id="1" data-title="1" data-price="25.00">
                   Add To Cart
                 </button>
               </div>
@@ -109,10 +123,10 @@
               </div>
             </div>
             <div class="mySlides fade">
-              <img class="pizza-img" src="pizza2.png" style="width:100%">
+              <img class="pizza-img" src="pizza2.png" style="width:100%" loading="lazy">
               <div class="info">
                 <div class="text">Name 2</div>
-                <button class="add-cart-button" data-title="2" data-price="25.00">
+                <button class="add-cart-button" id="2" data-title="2" data-price="25.00">
                   Add To Cart
                 </button>
               </div>
@@ -121,10 +135,10 @@
               </div>
             </div>
             <div class="mySlides fade">
-              <img class="pizza-img" src="pizza3.png" style="width:100%">
+              <img class="pizza-img" src="pizza3.png" style="width:100%" loading="lazy">
               <div class="info">
                 <div class="text">Name 3</div>
-                <button class="add-cart-button" data-title="3" data-price="25.00">
+                <button class="add-cart-button" id="3" data-title="3" data-price="25.00">
                   Add To Cart
                 </button>
               </div>
@@ -133,10 +147,10 @@
               </div>
             </div>
             <div class="mySlides fade">
-              <img class="pizza-img" src="pizza4.png" style="width:100%">
+              <img class="pizza-img" src="pizza4.png" style="width:100%" loading="lazy">
               <div class="info">
                 <div class="text">Name 4</div>
-                <button class="add-cart-button" data-title="4" data-price="25.00">
+                <button class="add-cart-button" id="4" data-title="4" data-price="25.00">
                   Add To Cart
                 </button>
               </div>
@@ -145,10 +159,10 @@
               </div>
             </div>
             <div class="mySlides fade">
-              <img class="pizza-img" src="pizza5.png" style="width:100%">
+              <img class="pizza-img" src="pizza5.png" style="width:100%" loading="lazy">
               <div class="info">
                 <div class="text">Name 5</div>
-                <button class="add-cart-button" data-title="5" data-price="25.00">
+                <button class="add-cart-button" id="5" data-title="5" data-price="25.00">
                   Add To Cart
                 </button>
               </div>
@@ -157,10 +171,10 @@
               </div>
             </div>
             <div class="mySlides fade">
-              <img class="pizza-img" src="pizza6.png" style="width:100%">
+              <img class="pizza-img" src="pizza6.png" style="width:100%" loading="lazy">
               <div class="info">
                 <div class="text">Name 6</div>
-                <button class="add-cart-button" data-title="pizza 6" data-price="25.00">
+                <button class="add-cart-button" id="6" data-title="6" data-price="25.00">
                   Add To Cart
                 </button>
               </div>
@@ -168,9 +182,9 @@
                 <button id ="6" class="viewbutton" href="#overlay">View More</button>
               </div>
             </div>
-            <div id="overlay">
+            <div class="overlay">
               <div id="overlay-inner">
-                <button Id="close">Close X</button>
+                <button id="close">Close X</button>
                 <div id ="overlay-content-1">
                   <h1>Item Name 1</h1>
                   <a class="ingrediants">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</a>
@@ -221,9 +235,294 @@
                 </div>
               </div>
             </div>
+            <div class="overlay-cart">
+              <div class="cart-overlay">
+                <button class="cart-close">Close X</button>
+                <div id="cart-overlay-content-1">
+                  <h1>Pizza 1</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="1">Regular</button>
+                    <button class="cart-button" data-title="2">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-2">
+                  <h1>Pizza 2</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="3">Regular</button>
+                    <button class="cart-button" data-title="4">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-3">
+                  <h1>Pizza 3</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="5">Regular</button>
+                    <button class="cart-button" data-title="6">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-4">
+                  <h1>Pizza 4</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="7">Regular</button>
+                    <button class="cart-button" data-title="8">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-5">
+                  <h1>Pizza 5</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="9">Regular</button>
+                    <button class="cart-button" data-title="10">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-6">
+                  <h1>Pizza 6</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="11">Regular</button>
+                    <button class="cart-button" data-title="12">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-7">
+                  <h1>Pizza Bread</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="13">Regular</button>
+                    <button class="cart-button" data-title="14">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-8">
+                  <h1>Fries</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="15">Regular</button>
+                    <button class="cart-button" data-title="16">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-9">
+                  <h1>Place-holder 1</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="17">Regular</button>
+                    <button class="cart-button" data-title="18">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-10">
+                  <h1>Place-holder 2</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="19">Regular</button>
+                    <button class="cart-button" data-title="20">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-11">
+                  <h1>Bundaberg</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="21">Regular</button>
+                    <button class="cart-button" data-title="22">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-12">
+                  <h1>Wine Collection</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="23">Regular</button>
+                    <button class="cart-button" data-title="24">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-13">
+                  <h1>Drink 3</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="25">Regular</button>
+                    <button class="cart-button" data-title="26">Large</button>
+                  </div>
+                </div>
+                <div id="cart-overlay-content-14">
+                  <h1>Drink 4</h1>
+                  <a class="item-description">This is some random description text blah blah</a>
+                  <div class="special-instructions">
+                    <a>Special instructions:</a>
+                    <input class="special-instructions-input" type="text" placeholder="We will do our best to accommodate your needs">
+                  </div>
+                  <div class="item-quantity">
+                    <a>Quantity</a>
+                    <div class="item-quantity-btns">
+                      <button class="minus">-</button>
+                      <span class="quantity">1</span>
+                      <button class="minus">+</button>
+                    </div>
+                  </div>
+                  <div class="size-buttons">
+                    <button class="cart-button" data-title="27">Regular</button>
+                    <button class="cart-button" data-title="28">Large</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
           </div>
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <br>
         <div style="text-align:center">
@@ -236,18 +535,131 @@
         </div>
       </div>
   </section>
-  <section>
-    <div id="sides-container">
-      <div id="sides-inner">
-        <h2>Slogans n stuff</h2>
-        <h1>Our Sides</h1>
+  <section id="sides">
+    <div class="zigzag"></div>
+    <div class="sides-header">
+      <h2>Slogan</h2>
+      <h1>Our Sides</h1>
+    </div>
+    <div class="sides-container">
+      <div class="sides-item 1">
+        <img src="pizza-bread.jpg" alt="pizza bread" loading="lazy">
+        <h2>Pizza Bread</h2>
+        <a class="sides-price">$10.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="7" data-title="7">
+          Add To Cart
+        </button>
+      </div>
+      <div class= "sides-item 2">
+        <img src="fries.jpg" alt="pizza bread" loading="lazy">
+        <h2>Fries</h2>
+        <a class="sides-price">$7.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="8" data-title="8">
+          Add To Cart
+        </button>
+      </div>
+      <div class= "sides-item 3">
+        <img src="chicken-wings.jpg" alt="pizza bread" loading="lazy">
+        <h2>Chicken Wings</h2>
+        <a class="sides-price">$12.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="9" data-title="9">
+          Add To Cart
+        </button>
+      </div>
+      <div class= "sides-item 4">
+        <img src="pizza-bread.jpg" alt="pizza bread" loading="lazy">
+        <h2>Pizza Bread</h2>
+        <a class="sides-price">$20.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="10" data-title="10">
+          Add To Cart
+        </button>
+      </div>
+      <div class= "sides-item 5">
+        <img src="pizza-bread.jpg" alt="pizza bread" loading="lazy">
+        <h2>Pizza Bread</h2>
+        <a class="sides-price">$20.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="11" data-title="10">
+          Add To Cart
+        </button>
+      </div>
+      
+      <div class="overlay-cart">
+        <div class="cart-overlay">
+          <button class="cart-close">Close X</button>
+          
+        </div>
+      </div>
+    </div>
+    <div class="more-side-btn-container">
+      <button class="more-side-btn">
+        View More
+      </button>
+    </div>
+    <div class="more-side-btn-container">
+      <button class="more-side-btn" id="less-btn">
+        View Less
+      </button>
+    </div>
+    <div class="sides-header">
+      <h1>Our Drinks</h1>
+    </div>
+    <div class="sides-container">
+      <div class= "sides-item">
+        <img src="pretzels-glass-beer.jpg" alt="pizza bread" loading="lazy">
+        <h2>Bundaberg</h2>
+        <a class="sides-price">$10.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="11" data-title="11">
+          Add To Cart
+        </button>
+      </div>
+      <div class= "sides-item">
+        <img src="line-wine-bottles-wineglasses.jpg" alt="pizza bread" loading="lazy">
+        <h2>Wine Collection</h2>
+        <a class="sides-price">$10.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="12"  data-title="12">
+          Add To Cart
+        </button>
+      </div>
+      <div class= "sides-item">
+        <img src="pizza-bread.jpg" alt="pizza bread" loading="lazy">
+        <h2>Drink 3</h2>
+        <a class="sides-price">$10.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="13"  data-title="13">
+          Add To Cart
+        </button>
+      </div>
+      <div class= "sides-item">
+        <img src="pizza-bread.jpg" alt="pizza bread" loading="lazy">
+        <h2>Drink 4</h2>
+        <a class="sides-price">$10.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="14"  data-title="14">
+          Add To Cart
+        </button>
+      </div>
+      <div class= "sides-item">
+        <img src="pizza-bread.jpg" alt="pizza bread" loading="lazy">
+        <h2>Drink 4</h2>
+        <a class="sides-price">$10.00</a>
+        <a class="ingrediants">Garlic, oregano, cheese, seasoning and a touch of red sauce</a>
+        <button class="add-cart-button" id="15"  data-title="15">
+          Add To Cart
+        </button>
       </div>
     </div>
   </section>
   <section>
     <div id="add-to-cart-mobile">
       <button class="add-to-cart-button-mobile">
-        <img class="cart-icon-mobile" src="cart.png" alt="cart icon">
+        <img class="cart-icon-mobile" src="cart.png" alt="cart icon" loading="lazy">
         <span class="total-price-mobile">$120.00</span>
         <div class=item-count-circle-mobile>
           <span class="item-count-mobile">3</span>
@@ -268,5 +680,6 @@
       </ul>
   </section>
   <script src="script.js"></script>
+  <script src="menu.js"></script>
 </body>
 </html>

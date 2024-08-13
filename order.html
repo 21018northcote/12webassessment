@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,intial-scale=1">
+  <title>Pizzara restaurant</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <header id ="top-nav-container">
+    <div class="navbar-mine">
+      <a href="index.html"><img id = "pizzaralogo" src ="logo.png" alt = "pizzara logo" title = "pizzara logo" loading="lazy"></a>
+    <div id="top-nav">
+        <nav id ="desktop-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <div class="menu-dropdown">
+                <a href="MenuPage.html" class="dropbtn">Menu</a>
+                <div class="dropdown-content">
+                  <a href="#pizza-section">Pizzas</a>
+                  <a href="MenuPage.html">Sides</a>
+                  <a href="MenuPage.html">Drinks</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="BookingPage.html">Booking</a></li>
+            <li><a href="order.html" id="order">Order</a></li>
+            <li>
+              <div class="menu-dropdown">
+                <a href="AboutPage.html" class="dropbtn">About</a>
+                <div class="dropdown-content">
+                  <a href="AboutPage.html">lnfo</a>
+                  <a href="AboutPage.html">Location</a>
+                  <a href="AboutPage.html">Contact</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="ContactUs.html">Contact</a></li>
+            <div class="add-to-cart-button-container">
+              <div class="add-to-cart-button">
+                <svg class="cart-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+                <span class="total-price">$000.00</span>
+                <span class="item-count">0</span>
+              </div>
+            </div>
+          </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <ul class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MenuPage.html">Menu</a></li>
+            <li><a href="BookingPage.html">Booking</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="AboutPage.html">About</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="">
+    <div id="cart">
+      <div id="cart-header">
+        <h1>Your Cart</h1>
+      </div>
+      <div class="cart-items">
+        
+      </div>
+      <div id="cart-buttons">
+        <button class="close-button">Close</button>
+        <button class="checkout-button" href="order.html">Check Out</button> 
+      </div>
+    </div>
+  </section>
+  <section>
+    <div id="menu-banner">
+      <div id="menu-title">
+        <h2>Random Slogan</h2>
+        <h1>Order Our Meals</h1>
+      </div> 
+      <img class ="menu-pizza" src="order-banner-pizza.png" alt="homepage banner pizza image">
+    </div>
+  </section>
+  <section class="order-segment">
+    <form id="payForm"></form>
+    <div class="order-container" id="details-container">
+      <h1>Your Order</h1>
+      <div class="order-items">
+        <div class="order-item">
+          <div class="cart-image">
+            <img src="pizza1.png">
+          </div>
+          <div class="name">
+            <a>Pizza 1</a>
+          </div>
+          <div class="price">
+            <a>$25.00</a>
+          </div>
+        </div>
+      </div>
+      <h2 class="order-details-header">Details</h2>
+      <div class="order-details">
+        <div class="order-detail">
+          <input type="text" class="details" form="payForm" placeholder="Pickup Time:" required>
+        </div>
+        <div class="order-detail">
+          <input type="text" class="details" form="payForm" placeholder="First Name:" required>
+        </div>
+        <div class="order-detail">
+          <input type="text" class="details" form="payForm" placeholder="Last Name:" required>
+        </div>
+        <div class="order-detail">
+          <input type="email" class="details" form="payForm" placeholder="Email:" required>
+        </div>
+        <div class="order-detail">
+          <input type="text" class="details" form="payForm" placeholder="Phone Number:" required>
+        </div>
+        <div class="order-detail">
+          <textarea type="text" class="details" id="instructions" form="payForm" placeholder="Special Instructions:" required></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="payment-side">
+      <div class="order-container" id="payment">
+        <h1>Payment</h1>
+        <div class="prices">
+          <div class="subtotal">
+            <span>Subtotal</span>
+            <span class="subtotal-price">$000.00</span>
+          </div>
+          <div class="total">
+            <span>Total</span>
+            <span>$000.00</span>
+          </div>
+        </div>
+        <div class="payment-method">
+          <h2>Payment Method</h2>
+          <div class="payment-method-option">
+            <button class="card-select"></button>
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M4 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H4Zm0 6h16v6H4v-6Z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M5 14a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Zm5 0a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2h-5a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+            </svg>
+            <a>Card</a>
+          </div>
+          <div class="payment-method-option">
+            <button class="bank-select"></button>
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M4 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H4Zm0 6h16v6H4v-6Z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M5 14a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Zm5 0a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2h-5a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+            </svg>
+            <a>Card</a>
+          </div>
+        </div>
+        <div class="payment-text">Heres some random text about gst and tax stuff and whatever, idk whats actually supposed to go here</div>
+        <div class="pay-button-container">
+          <button class="pay-button" form="payForm" type="submit">Pay Now</button>
+        </div>
+        <div class="payment-overlay">
+          <div class="payment-overlay-inner">
+            <a>We cannot except orders at this time</a>
+            <button class="pay-close-btn" type="submit">X</button>
+          </div>
+        </div>
+      </div>
+      <div class="order-image-container">
+        <img src="order-image.jpg" class="order-image" loading="lazy">
+        <div class="hor-bar"></div>
+        <div class="vert-bar"></div>
+      </div>
+    </div>
+  </section>
+  <div class="white-space"></div>
+    <section>
+      <div id = "footer-container">
+        <a>© Pizzara all Rights Reserved. Designed by
+        Ash Setford</a>
+        <ul>
+          <li><img class ="footer-icons" src ="faceboo.png" width = "40" alt="facebook icon"></li>
+          <li><img class ="footer-icons" src ="twtter.png" width = "40" alt="twitter icon"></li>
+          <li><img class ="footer-icons" src ="nstagram.png" width = "40" alt="instagram logo icon"></li>
+          <li><img class ="footer-icons" src ="youtube.png" width = "40" alt="youtube icon"></li>
+        </ul>
+    </section>
+    <script src="script.js"></script>
+    <script src="order.js"></script>
+  </body>
+</html>

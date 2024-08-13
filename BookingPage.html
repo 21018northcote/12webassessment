@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,intial-scale=1">
+  <title>Pizzara restaurant</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <header id ="top-nav-container">
+    <div class="navbar-mine">
+      <a href="index.html"><img id = "pizzaralogo" src ="logo.png" alt = "pizzara logo" title = "pizzara logo" loading="lazy"></a>
+    <div id="top-nav">
+        <nav id ="desktop-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <div class="menu-dropdown">
+                <a href="MenuPage.html" class="dropbtn">Menu</a>
+                <div class="dropdown-content">
+                  <a href="#pizza-section">Pizzas</a>
+                  <a href="MenuPage.html">Sides</a>
+                  <a href="MenuPage.html">Drinks</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="BookingPage.html" id="book">Booking</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li>
+              <div class="menu-dropdown">
+                <a href="AboutPage.html" class="dropbtn">About</a>
+                <div class="dropdown-content">
+                  <a href="AboutPage.html">lnfo</a>
+                  <a href="AboutPage.html">Location</a>
+                  <a href="AboutPage.html">Contact</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="ContactUs.html">Contact</a></li>
+            <div class="add-to-cart-button-container">
+              <div class="add-to-cart-button">
+                <svg class="cart-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+                <span class="total-price">$000.00</span>
+                <span class="item-count">0</span>
+              </div>
+            </div>
+          </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <ul class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MenuPage.html">Menu</a></li>
+            <li><a href="BookingPage.html">Booking</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="AboutPage.html">About</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="">
+    <div id="cart">
+      <div id="cart-header">
+        <h1>Your Cart</h1>
+      </div>
+      <div class="cart-items">
+
+      </div>
+      <div id="cart-buttons">
+        <button class="close-button">Close</button>
+        <button class="checkout-button"><a href="order.html" id="Check-out-link">Check Out</a></button> 
+      </div>
+    </div>
+  </section>
+  <section>
+    <div id="menu-banner">
+      <div id="menu-title">
+        <h2>Random Slogan</h2>
+        <h1>Reservations</h1>
+      </div> 
+      <img class ="menu-pizza" src="image-removebg-preview (6).png" alt="homepage banner pizza image">
+    </div>
+  </section>
+  <section class="booking-page-container">
+    <div class="booking-header">
+      <h2>Random Slogan</h2>
+      <h1>Book A Table</h1>
+    </div>
+    <div class="date-time-section">
+      <div class="booking-inner" id="date-time-section">
+        <h2>Date and Time</h2>
+        <div class="calendar">
+          <div class="cal-header">
+            <button id="prevBtn">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+              </svg>
+            </button>
+            <div class="monthYear" id='monthYear'></div>
+            <button id="nextBtn">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+          <div class="cal-days">
+            <div class="day">Mon</div>
+            <div class="day">Tue</div>
+            <div class="day">Wed</div>
+            <div class="day">Thu</div>
+            <div class="day">Fri</div>
+            <div class="day">Sat</div>
+            <div class="day">Sun</div>
+          </div>
+          <div class="cal-dates" id="cal-dates"></div>
+        </div>
+        <div class="booking-time-container">
+          <button class="timePrevBtn" id="timePrevBtn">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+            </svg>
+          </button>
+          <div class="time-text-container">
+            <span class="time">00:00</span>
+            <span class="time-text">Time</span>
+          </div>
+          <button class="timeNextBtn" id="timeNextBtn">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+        <div class="booking-time-container">
+          <button class="timePrevBtn" id="numPeoplePrevBtn">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+            </svg>
+          </button>
+          <div class="time-text-container">
+            <span class="numPeople">1</span>
+            <span class="numPeople-text">Guests</span>
+          </div>
+          <button class="timePrevBtn" id="numPeopleNextBtn">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+        <div class="continue-button-container">
+          <button class="continue-button">
+            Continue
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="booking-inner" id="details-section">
+        <h2>Your Details</h2>
+        <form>
+          <div class="details-input">
+            <div class="details-format">
+              <input class="details" id="fName" type="text" placeholder="First Name" required>
+              <input class="details" id="lName" type="text" placeholder="Last Name" required>
+              <input class="details" id="email" type="email" placeholder="Email" required>
+              <input class="details" id="number" type="tel" placeholder="Number" required>
+            </div>
+            <input class="details" id="comments" type="text" placeholder="Comments" required>
+          </div>
+          <div class="bookComBtnContainer">
+            <button class="bookComBtn" type="submit">Make Booking</button>
+          </div>
+        </form>
+        <div class="back-button-container">
+          <button class="back-button">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+            </svg>
+            back
+          </button>
+        </div>
+        <div class="book-confirmation-overlay">
+          <div class="book-confirmation-container">
+            <div class="book-overlay-header">
+              <h2>Booking Summary</h2>
+              <button class="close-book-button">Close X</button>
+            </div>
+            <div class="line-break-2"></div>
+            <div class="book-confirmation-content">
+              <div class="book-confirmation-date-time">
+                <div class="date-container">
+                  <a>Date:</a>
+                  <a class="date-selection"></a>
+                </div>
+                <div class="time-container">
+                  <a>Time:</a>
+                  <a class="time-selection"></a>
+                </div>
+                <div class="people-container">
+                  <a>Number Of Guests:</a>
+                  <a class="guests-selection"></a>
+                </div>
+              </div>
+              <div class="book-comfirmation-details">
+                <div class="name-container">
+                  <a>Name:</a>
+                  <a class="name-selection"></a>
+                </div>
+                <div class="email-container">
+                  <a>Email:</a>
+                  <a class="email-selection"></a>
+                </div>
+                <div class="number-container">
+                  <a>number:</a>
+                  <a class="number-selection"></a>
+                </div>
+                <div class="comments-container">
+                  <a>Comments:</a>
+                  <a class="comments-selection"></a>
+                </div>
+              </div>
+            </div>
+            <div class="line-break-2"></div>
+            <div class="confirm-button-container">
+              <button class="confirmBtn">Confirm Booking</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="white-space"></div>
+  <section>
+    <div id = "footer-container">
+      <a>© Pizzara all Rights Reserved. Designed by
+        Ash Setford</a>
+      <ul>
+        <li><img class ="footer-icons" src ="faceboo.png" width = "40" alt="facebook icon"></li>
+        <li><img class ="footer-icons" src ="twtter.png" width = "40" alt="twitter icon"></li>
+        <li><img class ="footer-icons" src ="nstagram.png" width = "40" alt="instagram logo icon"></li>
+        <li><img class ="footer-icons" src ="youtube.png" width = "40" alt="youtube icon"></li>
+      </ul>
+    </div>
+  </section>
+  <script src="calender.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

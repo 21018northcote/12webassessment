@@ -44,7 +44,6 @@ function showSlides(n) {
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
   const screenWidth = window.innerWidth;
-  const slideWidth = 100;
   let groupSize;
   let slideNumber;
   let dotsNumber;
@@ -56,10 +55,14 @@ function showSlides(n) {
     groupSize = 2;
     slideNumber = 5;
     dotsNumber = 5;
-  } else {
+  } else if(screenWidth > 1024 && screenWidth <= 1400){
     groupSize = 3;
     slideNumber = 4;
     dotsNumber = 4;
+  } else {
+    groupSize = 4;
+    slideNumber = 3;
+    dotsNumber = 3;
   }
   
   if (n > slideNumber) {slideIndex = 1}
@@ -73,11 +76,11 @@ function showSlides(n) {
     }
   }
   for (i = 0; i < dotsNumber; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active-menu", "");
   }
-  dots[slideIndex-1].className += " active";
+  dots[slideIndex-1].className += " active-menu";
 }
-const overlay = document.getElementById('overlay');
+const overlay = document.querySelector('.overlay');
 const buttons = document.getElementsByClassName('viewbutton');
 for(const button of buttons){
   button.addEventListener('click', (event) => {
@@ -104,7 +107,50 @@ closeButton.addEventListener('click', () => {
   overlayContent.style.display = 'none';
   overlayContent = document.getElementById('overlay-content-6');
   overlayContent.style.display = 'none';
-  
+});
+
+const overlayCart = document.querySelector('.overlay-cart');
+const addButtons = document.getElementsByClassName('add-cart-button');
+for(const button of addButtons){
+  button.addEventListener('click', (event) => {
+    const clickedBtnId = event.target.id
+    overlayCart.style.display = 'flex'; 
+    const overlayContent = document.getElementById(`cart-overlay-content-${clickedBtnId}`);
+    overlayContent.style.display = 'flex';
+  });
+}
+const closeButtonCart = document.querySelector('.cart-close'); 
+
+closeButtonCart.addEventListener('click', () => {
+  overlayCart.style.display = 'none';// Hide the overlay
+  let overlayContent = document.getElementById('cart-overlay-content-1');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-2');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-3');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-4');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-5');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-6');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-7');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-8');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-9');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-10');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-11');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-12');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-13');
+  overlayContent.style.display = 'none';
+  overlayContent = document.getElementById('cart-overlay-content-14');
+  overlayContent.style.display = 'none';
 });
 
 document.querySelector('a[href="#pizza-section"]').addEventListener('click', function (event) {
@@ -114,37 +160,70 @@ document.querySelector('a[href="#pizza-section"]').addEventListener('click', fun
     });
 });
 
+
+
 let cartButton = document.querySelector('.add-to-cart-button-container');
+let mobileCartButton = document.querySelector('.add-to-cart-button-mobile');
 let section = document.querySelector('section');
 let cartCloseButton = document.querySelector('.close-button');
+let cartCheckoutButton = document.querySelector('.checkout-button');
 let cartHTML = document.querySelector('#cart');
 let cartItemsHTML = document.querySelector('.cart-items');
-let itemCount = document.querySelector('.item-count');
+let orderItemsHTML = document.querySelector('.order-items');
+let itemCount = document.querySelectorAll('.item-count');
+let itemCountMobile = document.querySelector('.item-count-mobile');
+let totalPrice = document.querySelectorAll('.total-price');
+let totalPriceMobile = document.querySelector('.total-price-mobile');
+let orderPrice = document.querySelector('.subtotal-price');
+let priceTotal = 0;
+let cartSubtotal = document.querySelector('.cart-price-subtotal-value');
+let cartTotal = document.querySelector('.cart-price-total-value');
 
 
 let cartItems = [];
 let carts = [];
 
 cartButton.addEventListener('click' , () => {
-  section.classList.toggle('showCart')
+  section.classList.toggle('showCart');
+});
+
+mobileCartButton.addEventListener('click' , () => {
+  section.classList.toggle('showCart-mobile');
 });
 
 cartCloseButton.addEventListener('click', () => {
   section.classList.remove('showCart')
+  section.classList.remove('showCart-mobile');
+});
+cartCheckoutButton.addEventListener('click', () => {
+  window.location.href = document.getElementById('Check-out-link');
 });
 
-let addToCartButtons = document.getElementsByClassName('add-cart-button');
+let addToCartButtons = document.getElementsByClassName('cart-button');
+
 for(const button of addToCartButtons){
   button.addEventListener('click', (event) =>{
     let addButtonId = event.target;
+    const originalColor = addButtonId.style.backgroundColor;
+    const originalText = addButtonId.innerText;
+    addButtonId.style.backgroundColor = 'rgb(3, 173, 9)';
+    addButtonId.innerText = 'Added';
+    addButtonId.setAttribute('disabled', true);
+    
+    setTimeout(() => {
+      addButtonId.style.backgroundColor = originalColor;
+      addButtonId.innerText = originalText;
+      addButtonId.removeAttribute('disabled');
+    }, 1500);
+    // Hide the overlay
+    
+    
     let productId = addButtonId.dataset.title;
     addToCart(productId);
-    console.log('button-clicked')
   })
 }
 const addToCart = (product_id) => {
   let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id);
-  console.log(positionThisProductInCart);
   if(carts.length <= 0){
       carts = [{
         product_id: product_id,
@@ -182,26 +261,47 @@ const addCartToHtml = () => {
         <div class="name">
           ${info.name}
         </div>
-        <div class="total-price">
+        <div class="price">
           $${info.price * cart.quantity}
         </div>
         <div class="Quantity">
-          <span class="minus"><</span>
+          <span class="minus">-</span>
           <span>${cart.quantity}</span>
-          <span class="plus">></span>
+          <span class="plus">+</span>
         </div>
         `;
       cartItemsHTML.appendChild(newCart);
     })
   }
-  itemCount.innerText = itemCountQuantity;
+  itemCount.forEach((itemCount) => {
+    itemCount.innerText = itemCountQuantity;
+  })
+  itemCountMobile.innerText = itemCountQuantity;
+  priceTotal = 0;
+  for(i = 0; i < carts.length; i++){
+    let cartItem = carts[i];
+    let productPosition = cartItems.findIndex((value) => value.id == cartItem.product_id);
+    let info = cartItems[productPosition];
+    let cartItemPrice = info.price * cartItem.quantity;
+    priceTotal += cartItemPrice;
+  }
+  let roundedPrice = Math.round(priceTotal * 100) / 100;
+  let fixed = roundedPrice.toFixed(2);
+  totalPrice.forEach(totalPrice2 =>{
+    totalPrice2.innerText = `$${fixed}`;
+  });
+  totalPriceMobile.innerText = `$${fixed}`;
+  cartSubtotal.innerText = `$${fixed}`;
+  let cartGst = priceTotal * 1.1;
+  roundedPrice = Math.round(cartGst * 100) / 100;
+  fixed = roundedPrice.toFixed(2);
+  cartTotal.innerText = `$${fixed}`;
 }
 
 cartItemsHTML.addEventListener('click', (event) => {
   let positionClick = event.target;
   if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
     let product_id = positionClick.parentElement.parentElement.dataset.id;
-    console.log(product_id);
     let type = 'minus';
     if(positionClick.classList.contains('plus')){
       type = 'plus';
@@ -229,6 +329,7 @@ const changeQuantity = (product_id, type) =>{
   addCartToHtml();
 }
 
+
 const initApp = () => {
   fetch('products.json')
     .then(response => response.json())
@@ -243,6 +344,11 @@ const initApp = () => {
 }
 
 initApp();
+
+
+
+
+
 
 
 

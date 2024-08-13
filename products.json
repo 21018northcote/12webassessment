@@ -1,38 +1,170 @@
 [
   {
     "id": 1,
-    "name": "PRODUCT 1",
-    "price": 25,
+    "name": "PRODUCT 1 (Reg)",
+    "price": 25.00,
     "image": "pizza1.png"
   },
   {
     "id": 2,
-    "name": "PRODUCT 2",
-    "price": 25,
-    "image": "pizza2.png"
+    "name": "PRODUCT 1 (Lg)",
+    "price": 25.00,
+    "image": "pizza1.png"
   },
   {
     "id": 3,
-    "name": "PRODUCT 3",
-    "price": 25,
-    "image": "pizza3.png"
+    "name": "PRODUCT 2 (Reg)",
+    "price": 25.00,
+    "image": "pizza2.png"
   },
   {
     "id": 4,
-    "name": "PRODUCT 4",
-    "price": 25,
-    "image": "pizza4.png"
+    "name": "PRODUCT 2 (Lg)",
+    "price": 25.00,
+    "image": "pizza2.png"
   },
   {
     "id": 5,
-    "name": "PRODUCT 5",
-    "price": 25,
-    "image": "pizza5.png"
+    "name": "PRODUCT 3 (Reg)",
+    "price": 25.00,
+    "image": "pizza3.png"
   },
   {
     "id": 6,
-    "name": "PRODUCT 6",
-    "price": 25,
+    "name": "PRODUCT 3 (Lg)",
+    "price": 25.00,
+    "image": "pizza3.png"
+  },
+  {
+    "id": 7,
+    "name": "Pizza 4 (Reg)",
+    "price": 20.00,
+    "image": "pizza4.png"
+  },
+  {
+    "id": 8,
+    "name": "Pizza 4 (Lg)",
+    "price": 20.00,
+    "image": "pizza4.png"
+  },
+  {
+    "id": 9,
+    "name": "Pizza 5 (Reg)",
+    "price": 20.00,
+    "image": "pizza5.png"
+  },
+  {
+    "id": 10,
+    "name": "Pizza 5 (Lg)",
+    "price": 20.00,
+    "image": "pizza5.png"
+  },
+  {
+    "id": 11,
+    "name": "Pizza 6 (Reg)",
+    "price": 10.00,
     "image": "pizza6.png"
+  },
+  {
+    "id": 12,
+    "name": "Pizza 6 (Lg)",
+    "price": 10.00,
+    "image": "pizza6.png"
+  },
+  {
+    "id": 13,
+    "name": "Pizza bread (Reg)",
+    "price": 10.00,
+    "image": "pizza-bread.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Pizza bread (Lg)",
+    "price": 12.00,
+    "image": "pizza-bread.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Fries (Reg)",
+    "price": 5.50,
+    "image": "fries.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Fries (Lg)",
+    "price": 7.00,
+    "image": "fries.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Chicken wings (Reg)",
+    "price": 10.00,
+    "image": "close-up-delicious-chicken-meal.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Chicken wings (Lg)",
+    "price": 12.00,
+    "image": "close-up-delicious-chicken-meal.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Place holder (Reg)",
+    "price": 10.00,
+    "image": "close-up-delicious-chicken-meal.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Place holder (Lg)",
+    "price": 12.00,
+    "image": "close-up-delicious-chicken-meal.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Bundaberg (Reg)",
+    "price": 10.00,
+    "image": "pretzels-glass-beer.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Bundaberg (Lg)",
+    "price": 12.00,
+    "image": "pretzels-glass-beer.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Wine Collection (Reg)",
+    "price": 10.00,
+    "image": "line-wine-bottles-wineglasses.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Wine Collection (Lg)",
+    "price": 12.00,
+    "image": "line-wine-bottles-wineglasses.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Drink 3 (Reg)",
+    "price": 10.00,
+    "image": "line-wine-bottles-wineglasses.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Drink 3 (Lg)",
+    "price": 12.00,
+    "image": "line-wine-bottles-wineglasses.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Drink 4 (Reg)",
+    "price": 10.00,
+    "image": "line-wine-bottles-wineglasses.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Drink 4 (Lg)",
+    "price": 12.00,
+    "image": "line-wine-bottles-wineglasses.jpg"
   }
 ]
